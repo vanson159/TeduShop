@@ -16,9 +16,10 @@ namespace TeduShop.Model.Models
         public int ID { get; set; }
 
         [Required]
+        [MaxLength(50)]
         public string Name { get; set; }
 
-        // Trường này trỏ tới toàn bộ menu thuộc 1 nhóm group ở bảng menugroup này
+        // Trường này trỏ tới toàn bộ menu thuộc 1 nhóm group ở bảng menugroup này ???
         public virtual IEnumerable<Menu> Menus { get; set; }
     }
 }

@@ -13,6 +13,7 @@ namespace TeduShop.Model.Models
         /// Trường ID của nội dung, thuộc tính key cho biết trường này sẽ được sinh ra tự động khi tạo bản ghi
         /// </summary>
         [Key]
+        [MaxLength(50)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string ID { get; set; }
 
