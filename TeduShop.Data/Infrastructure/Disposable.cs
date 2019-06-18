@@ -9,7 +9,7 @@ namespace TeduShop.Data.Infrastructure
     /// <summary>
     /// Hủy một số thứ và quản lý bộ nhớ (?)
     /// </summary>
-    class Disposable : IDisposable
+    public class Disposable : IDisposable
     {
         private bool isDisposed;
 
