@@ -8,7 +8,11 @@ using System.Threading.Tasks;
 
 namespace TeduShop.Data.Infrastructure
 {
-    public abstract class RepositoryBase<T> where T : class
+    /// <summary>
+    /// Thực thi các phương thức từ IReponsitory 
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public abstract class RepositoryBase<T> : IReponsitory<T> where T : class
     {
         #region Properties
         private TeduShopDbContext dataContext;

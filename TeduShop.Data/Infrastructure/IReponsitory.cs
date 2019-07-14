@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace TeduShop.Data.Infrastructure
 {
+    /// <summary>
+    /// Định nghĩa ra các phương thức generic 
+    /// Các phương thức này sẽ được thực thi ở class kế thừa, và có chức năng thao tác dữ liệu với các entity
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IReponsitory<T> where T : class
     {
         // Marks an entity as new

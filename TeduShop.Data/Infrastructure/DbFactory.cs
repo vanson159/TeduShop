@@ -1,6 +1,10 @@
 ﻿namespace TeduShop.Data.Infrastructure
 {
-    public class DbFactory : Disposable, IDbFactory
+    /// <summary>
+    /// Kế thừa từ IDbFactory 
+    /// Giúp quản lý DbContext
+    /// </summary>
+    public class  DbFactory : Disposable, IDbFactory
     {
         private TeduShopDbContext dbContext;
 
