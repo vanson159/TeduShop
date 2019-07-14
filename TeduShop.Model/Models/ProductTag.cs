@@ -11,7 +11,7 @@ namespace TeduShop.Model.Models
         public int ProductID { set; get; }
 
         [Key]
-        [Column(TypeName = "varchar", Order = 2)]
+        [Column(TypeName = "varchar", Order = 2)] // Phải có order để phân biệt các key với nhau
         [MaxLength(50)]
         public string TagID { set; get; }
 
