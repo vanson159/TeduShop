@@ -12,7 +12,7 @@ namespace TeduShop.Data.Infrastructure
     /// Thực thi các phương thức từ IReponsitory 
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class RepositoryBase<T> : IReponsitory<T> where T : class
+    public abstract class RepositoryBase<T> : IRepository<T> where T : class
     {
         #region Properties
         private TeduShopDbContext dataContext;

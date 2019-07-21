@@ -12,7 +12,7 @@ using System.Linq;
 
 namespace TeduShop.Data.Reponsetories
 {
-    public interface IProductCategoryReponsitory
+    public interface IProductCategoryReponsitory : IRepository<ProductCategory>
     {
         IEnumerable<ProductCategory> GetByAlias(string alias);
     }

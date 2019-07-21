@@ -12,7 +12,7 @@ namespace TeduShop.Data.Infrastructure
     /// Các phương thức này sẽ được thực thi ở class kế thừa, và có chức năng thao tác dữ liệu với các entity
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public interface IReponsitory<T> where T : class
+    public interface IRepository<T> where T : class
     {
         // Marks an entity as new
         void Add(T entity);
