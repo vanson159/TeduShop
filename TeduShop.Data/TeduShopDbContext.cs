@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using TeduShop.Model.Models;
 
 namespace TeduShop.Data
@@ -21,6 +16,7 @@ namespace TeduShop.Data
         }
 
         #region Khai báo các bảng trong Model
+
         public DbSet<Footer> Footers { set; get; }
         public DbSet<Menu> Menus { set; get; }
         public DbSet<MenuGroup> MenuGroups { set; get; }
@@ -41,15 +37,15 @@ namespace TeduShop.Data
         public DbSet<Tag> Tags { set; get; }
 
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
-        #endregion
+
+        #endregion Khai báo các bảng trong Model
 
         /// <summary>
-        /// Chạy khi khởi tạo entity framework 
+        /// Chạy khi khởi tạo entity framework
         /// </summary>
         /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            
         }
     }
 }

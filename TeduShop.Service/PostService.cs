@@ -17,6 +17,7 @@ namespace TeduShop.Service
         void Delete(int ID);
         IEnumerable<Post> GetAll();
         IEnumerable<Post> GetAllPaging(int page, int pageSize, out int totalRow);
+        IEnumerable<Post> GetAllByCategoryPaging(int categoryId, int page, int pageSize, out int totalRow);
         Post GetByID(int ID);
         IEnumerable<Post> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow);
         /// <summary>
@@ -55,15 +56,22 @@ namespace TeduShop.Service
             return _postReposotory.GetAll(new string[] { "PostCategory" });
         }
 
-        public IEnumerable<Post> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow)
+        public IEnumerable<Post> GetAllPaging(int page, int pageSize, out int totalRow)
         {
-            // TODO: Select all post by Tag
+            // Phân trang bình thường
             return _postReposotory.GetMultiPaging(x => x.Status, out totalRow, page, pageSize);
         }
 
-        public IEnumerable<Post> GetAllPaging(int page, int pageSize, out int totalRow)
+        public IEnumerable<Post> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow)
         {
-            return _postReposotory.GetMultiPaging(x => x.Status, out totalRow, page, pageSize);
+            // Phân trand dựa vào thẻ Tag
+            return _postReposotory.GetAllByTag(tag,page,pageSize,out totalRow);
+        }
+
+        public IEnumerable<Post> GetAllByCategoryPaging(int categoryId, int page, int pageSize, out int totalRow)
+        {
+            //Phân trang dựa vào loại Post
+            return _postReposotory.GetMultiPaging(x => x.Status && x.CategoryID == categoryId, out totalRow, page, pageSize, new string[] { "PostCategory"});
         }
 
         public Post GetByID(int id)
@@ -84,7 +92,6 @@ namespace TeduShop.Service
             _unitOfWork.Commit();
         }
 
-       
-       
+        
     }
 }
