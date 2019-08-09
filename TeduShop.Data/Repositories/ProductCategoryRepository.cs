@@ -1,14 +1,7 @@
-﻿
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using TeduShop.Data.Infrastructure;
 using TeduShop.Model.Models;
-using System.Linq;
 
 namespace TeduShop.Data.Reponsetories
 {
@@ -19,10 +12,8 @@ namespace TeduShop.Data.Reponsetories
 
     public class ProductCategoryRepository : RepositoryBase<ProductCategory>, IProductCategoryReponsitory
     {
-       
         public ProductCategoryRepository(DbFactory dbFactory) : base(dbFactory)
         {
-
         }
 
         public IEnumerable<ProductCategory> GetByAlias(string alias)

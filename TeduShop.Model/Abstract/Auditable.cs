@@ -5,7 +5,7 @@ namespace TeduShop.Model.Abstract
 {
     public abstract class Auditable : IAuditable
     {
-        public DateTime CreatedDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
         public DateTime? UpdateDate { get; set; }
 
         [MaxLength(256)]
