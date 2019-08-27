@@ -36,7 +36,7 @@ namespace TeduShop.UnitTest.RepositoryTest
         public void PostCategory_Repository_Create()
         {
             PostCategory category = new PostCategory();
-            category.Name = "Test category";
+            category.Name = "Test category second";
             category.Alias = "Test-category";
             category.Status = true;
 
@@ -44,7 +44,7 @@ namespace TeduShop.UnitTest.RepositoryTest
             unitOfWork.Commit();
             // Test bằng đối tượng Assert của UnitTesing namespace
             Assert.IsNotNull(result);
-            Assert.AreEqual(13,category.ID);
+            Assert.AreEqual(17,category.ID);
         }
 
         [TestMethod]

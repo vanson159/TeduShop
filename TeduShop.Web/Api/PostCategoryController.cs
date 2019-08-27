@@ -32,15 +32,17 @@ namespace TeduShop.Web.Api
             {
                 HttpResponseMessage response = null;
                 // Kiểm tra validate theo các trường trong PostCategory
-                if (ModelState.IsValid)
-                {
-                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-                }
-                else
-                {
-                    var listCategory = _postCategoryService.GetAll();
-                    response = request.CreateResponse(HttpStatusCode.OK, listCategory);
-                }
+                //if (ModelState.IsValid)
+                //{
+                //    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                //}
+                //else
+                //{
+                //    var listCategory = _postCategoryService.GetAll();
+                //    response = request.CreateResponse(HttpStatusCode.OK, listCategory);
+                //}
+                var listCategory = _postCategoryService.GetAll();
+                response = request.CreateResponse(HttpStatusCode.OK, listCategory);
                 return response;
             });
         }
